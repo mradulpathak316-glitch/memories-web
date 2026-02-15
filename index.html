@@ -134,7 +134,7 @@ function showSection(sectionId){
 <button id="secretBtn" onclick="openSecret()">♥</button>
 
 <!-- Secret Section -->
-<div id="secretBox" style="display:none;">
+<div id="secretBox">
     <h2>💌 Secret Message</h2>
     <p>You are very special to me ❤️</p>
     <img src="images/secret.jpeg" width="300">
@@ -145,13 +145,14 @@ function showSection(sectionId){
 function openSecret() {
     var password = prompt("Enter Secret Password:");
 
-    if(password === "081003") {   // Change password here
+    if(password === "081003") {
         document.getElementById("secretBox").style.display = "block";
     } else {
         alert("Wrong Password 😜");
     }
 }
 </script>
+
 
 </body>
 
