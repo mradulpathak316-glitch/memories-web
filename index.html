@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Memories</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="music/song.mp3" type="audio/mpeg">
+</audio>
+
+<div id="passwordBox" class="container">
+  <h1>Enter Password 🔐</h1>
+  <input type="password" id="passwordInput" placeholder="Enter password"
+  style="padding:10px;border-radius:20px;border:none;width:80%;margin-top:15px;">
+  <br><br>
+  <button onclick="checkPassword()" class="button">Unlock 💜</button>
+  <p id="error" style="color:red;margin-top:10px;"></p>
+</div>
+
+
+<div id="mainContent" style="display:none;">
+
+  <!-- HOME SECTION -->
+  <div id="homeSection" class="container">
+    <h1>A Little Corner of Our Memories</h1>
+    <a onclick="showSection('photos')" class="button">📸 Photo Memories</a>
+    <a onclick="showSection('videos')" class="button">🎥 Video Moments</a>
+    <a onclick="showSection('why')" class="button">🌸 Why You Matter</a>
+  </div>
+
+  <!-- PHOTO SECTION -->
+  <div id="photos" class="container" style="display:none;">
+    <h1>Photo Memories 📸</h1><div class="photo-card">
+  <img src="images/photo1.jpg">
+  <p class="caption">This was the day we laughed for no reason 😂</p>
+</div>
+
+<div class="photo-card">
+  <img src="images/photo2.jpg">
+  <p class="caption">Main character energy ✨</p>
+</div>
+
+<div class="photo-card">
+  <img src="images/photo3.jpg">
+  <p class="caption">Unplanned but perfect 💜</p>
+</div>
+
+<div class="photo-card">
+  <img src="images/photo4.jpg">
+  <p class="caption">you are getting more cute 💜</p>
+</div>
+
+<div class="photo-card">
+  <img src="images/photo5.jpg">
+  <p class="caption">Muh Bnana Jaruri tha?? 💜</p>
+</div>
+
+<div class="photo-card">
+  <img src="images/photo6.jpg">
+  <p class="caption">khair teri tarif krne ka mn nhi h 💜</p>
+</div>
+
+<div class="photo-card">
+  <img src="images/photo7.jpg">
+  <p class="caption">Sundar to lagti hai tu 💜</p>
+</div>
+
+
+    <a onclick="showSection('homeSection')" class="button">⬅ Back</a>
+  </div>
+
+  <!-- VIDEO SECTION -->
+  <div id="videos" class="container" style="display:none;">
+    <h1>Video Moments 🎥</h1>
+    <video controls>
+      <source src="videos/video1.mp4" type="video/mp4">
+    
+    </video>
+    <video controls>
+      <source src="videos/video2.mp4" type="video/mp4">
+    </video>
+    
+  
+  
+
+    
+    
+    <a onclick="showSection('homeSection')" class="button">⬅ Back</a>
+  </div>
+
+  <!-- WHY SECTION -->
+  <div id="why" class="container" style="display:none;">
+    <h1>Why You Matter 🌸</h1>
+    <p>You are someone who complete me </p>
+    <p>You are such a kind heart </p>
+    <p>Khair tere pas to Bhagwana hai.</p> 
+    <a onclick="showSection('homeSection')" class="button">⬅ Back</a>
+  </div>
+
+</div>
+
+
+<script>
+
+function checkPassword(){
+  var password = document.getElementById("passwordInput").value;
+
+  if(password === "biscuit"){
+    document.getElementById("passwordBox").style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
+    document.getElementById("bgMusic").play();
+  } else {
+    document.getElementById("error").innerText = "Wrong password 😢";
+  }
+}
+
+function showSection(sectionId){
+  document.getElementById("homeSection").style.display = "none";
+  document.getElementById("photos").style.display = "none";
+  document.getElementById("videos").style.display = "none";
+  document.getElementById("why").style.display = "none";
+
+  document.getElementById(sectionId).style.display = "block";
+}
+
+</script>
+
+<!-- Secret Button (Hidden in corner) -->
+<button id="secretBtn" onclick="openSecret()">♥</button>
+
+<!-- Secret Section -->
+<div id="secretBox" style="display:none;">
+    <h2>💌 Secret Message</h2>
+    <p>You are very special to me ❤️</p>
+    <img src="secret.jpg" alt="Secret Pic" width="200">
+</div>
+
+<script>
+function openSecret() {
+    var password = prompt("Enter Secret Password:");
+
+    if(password === "081003") {   // Change password here
+        document.getElementById("secretBox").style.display = "block";
+    } else {
+        alert("Wrong Password 😜");
+    }
+}
+</script>
+
+</body>
+
+
+
+
+</html>
