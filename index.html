@@ -106,29 +106,24 @@
 
 
 <script>
-
 function checkPassword(){
   var password = document.getElementById("passwordInput").value;
 
   if(password === "biscuit"){
     document.getElementById("passwordBox").style.display = "none";
     document.getElementById("mainContent").style.display = "block";
-    document.getElementById("bgMusic").play();
+
+    var music = document.getElementById("bgMusic");
+    music.play().catch(function(error){
+        console.log("Autoplay blocked:", error);
+    });
+
   } else {
     document.getElementById("error").innerText = "Wrong password 😢";
   }
 }
-
-function showSection(sectionId){
-  document.getElementById("homeSection").style.display = "none";
-  document.getElementById("photos").style.display = "none";
-  document.getElementById("videos").style.display = "none";
-  document.getElementById("why").style.display = "none";
-
-  document.getElementById(sectionId).style.display = "block";
-}
-
 </script>
+
 
 <!-- Secret Button (Hidden in corner) -->
 <button id="secretBtn" onclick="openSecret()">♥</button>
