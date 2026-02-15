@@ -137,9 +137,11 @@ function showSection(sectionId){
 <div id="secretBox">
     <h2>💌 Secret Message</h2>
     <p>You are very special to me ❤️</p>
-    <img src="images/secret.jpeg" width="300">
-
+    <img src="images/secret.jpeg">
+    <br><br>
+    <button onclick="closeSecret()" class="button">⬅ Back</button>
 </div>
+
 
 <script>
 function openSecret() {
@@ -151,7 +153,12 @@ function openSecret() {
         alert("Wrong Password 😜");
     }
 }
+
+function closeSecret() {
+    document.getElementById("secretBox").style.display = "none";
+}
 </script>
+
 
 
 </body>
